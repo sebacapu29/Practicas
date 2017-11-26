@@ -1,0 +1,11 @@
+C:\Projects\Practicas\TestRecu\bin\Debug\TestRecu.exe.config
+C:\Projects\Practicas\TestRecu\bin\Debug\TestRecu.exe
+C:\Projects\Practicas\TestRecu\bin\Debug\TestRecu.pdb
+C:\Projects\Practicas\TestRecu\bin\Debug\Entidades.dll
+C:\Projects\Practicas\TestRecu\bin\Debug\Entidades.pdb
+C:\Projects\Practicas\TestRecu\obj\Debug\TestRecu.csprojResolveAssemblyReference.cache
+C:\Projects\Practicas\TestRecu\obj\Debug\TestRecu.Form1.resources
+C:\Projects\Practicas\TestRecu\obj\Debug\TestRecu.Properties.Resources.resources
+C:\Projects\Practicas\TestRecu\obj\Debug\TestRecu.csproj.GenerateResource.Cache
+C:\Projects\Practicas\TestRecu\obj\Debug\TestRecu.exe
+C:\Projects\Practicas\TestRecu\obj\Debug\TestRecu.pdb

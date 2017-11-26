@@ -37,5 +37,9 @@ namespace Entidades
             this.pacienteActual = null;
 
         }
+        public override string ToString()
+        {
+            return this.nombre;
+        }
     }
 }
