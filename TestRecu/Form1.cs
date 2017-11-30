@@ -25,11 +25,12 @@ namespace TestRecu
             InitializeComponent();
             this.medicoGeneral = new MGeneral("Luis", "Salinas");
             this.medicoEspecialista = new MEspecialista("Jorge", "Iglesias", MEspecialista.Especialidad.Traumatologo);
+            this.pacientesEnEspera = new Queue<Paciente>();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            this.AtenderPaciente(this.medicoGeneral);
         }
         private void AtenderPaciente(IMedico medico)
         {
@@ -37,8 +38,7 @@ namespace TestRecu
             {
                 medico.IniciarAtencion(this.pacientesEnEspera.Dequeue());       
             }
-                    
-                
+                                 
         }
         public void FinAtencion(Paciente p, Medico m)
         {
@@ -50,8 +50,8 @@ namespace TestRecu
         private void MockPaciente()
         {
             Random numRan = new Random();
-            numRan.Next(1, 10000);
-            string nombre = "Paciente" + numRan;
+            int numeroRan = numRan.Next(1, 10000);
+            string nombre = "Paciente" + numeroRan;
             Paciente p = new Paciente(nombre, "Apellido");
             this.pacientesEnEspera.Enqueue(p);
             Thread.Sleep(5000);
@@ -59,7 +59,8 @@ namespace TestRecu
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //this.mocker = new Thread()
+            this.mocker = new Thread(MockPaciente);
+            this.mocker.Start();
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)

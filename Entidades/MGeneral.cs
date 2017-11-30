@@ -24,14 +24,26 @@ namespace Entidades
 
         protected override void Atender()
         {
-            tiempoAleatorio.Next(1500,2200);
-            Thread.Sleep(Convert.ToInt32(tiempoAleatorio));
-            MessageBox.Show("La atención ha Finalizado");
-
-            using (StreamWriter swAtencion = new StreamWriter(AppDomain.CurrentDomain.BaseDirectory + "pacientes_atendidos.txt",true))
+            //Lanza excepcion de null reference
+            try
             {
-                swAtencion.Write(this.EstaAtendiendoA);
+                int randomTime = tiempoAleatorio.Next(1500, 2200);
+                Thread.Sleep(Convert.ToInt32(randomTime));
+
+
+                using (StreamWriter swAtencion = new StreamWriter(AppDomain.CurrentDomain.BaseDirectory + "pacientes_atendidos.txt", true))
+                {
+                    swAtencion.Write(this.EstaAtendiendoA);
+                }
+
+                MessageBox.Show("La atención ha Finalizado");
             }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+           
         }
     }
 }
